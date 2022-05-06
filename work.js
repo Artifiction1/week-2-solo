@@ -699,11 +699,42 @@ and another array unmatch with all the remaining ones.
 
 */
 console.log("/n exercise 19 /n")
+function searchAndDivide(mov, strng){
+    let y = strng
+    y = y.toUpperCase()
+    let i = 0
+    let j = 0
+    let k = 0
+    let l = 0
+    let v = []
+    let z = []
+    while(i<mov.length)
+    {
+    let x = mov[i].Title
+    x = x.toUpperCase()
+    x = x.split(" ")
+    j = 0
+    while(j<x.length){
+    if(x[j] === y){
+    z[k] = mov[i]
+    k++
+    break
+    }    
+    j++
+}if(z[k]!== mov[i])
+{v[l] = mov[i]
+}
+i++
+x = x.join(" ")
+} return {includeSearched: z, DoesNotIncludeSearched: v,}
+}
+console.log(searchAndDivide(movies,"avengers"))
 /* EXERCISE 20
 
 Write a function called "removeIndex" which receives a number as a parameter and returns the provided movies array without the element in the given position.
 
 */
+
 
 // [EXTRAS] JS Advanced
 
