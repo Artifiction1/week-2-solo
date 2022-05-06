@@ -2,7 +2,7 @@ const movies = [
 
     {
 
-    Title: "The Lord of the Rings: The Fellowship of the Ring",
+    Title: "The Lord of the Rings : The Fellowship of the Ring",
 
     Year: "2001",
 
@@ -18,7 +18,7 @@ const movies = [
 
     {
 
-    Title: "The Lord of the Rings: The Return of the King",
+    Title: "The Lord of the Rings : The Return of the King",
 
     Year: "2003",
 
@@ -34,7 +34,7 @@ const movies = [
 
     {
 
-    Title: "The Lord of the Rings: The Two Towers",
+    Title: "The Lord of the Rings : The Two Towers",
 
     Year: "2002",
 
@@ -130,7 +130,7 @@ const movies = [
 
     {
 
-    Title: "Greystoke: The Legend of Tarzan, Lord of the Apes",
+    Title: "Greystoke : The Legend of Tarzan, Lord of the Apes",
 
     Year: "1984",
 
@@ -178,7 +178,7 @@ const movies = [
 
     {
 
-    Title: "Avengers: Infinity War",
+    Title: "Avengers : Infinity War",
 
     Year: "2018",
 
@@ -194,7 +194,7 @@ const movies = [
 
     {
 
-    Title: "Avengers: Age of Ultron",
+    Title: "Avengers : Age of Ultron",
 
     Year: "2015",
 
@@ -210,7 +210,7 @@ const movies = [
 
     {
 
-    Title: "Avengers: Endgame",
+    Title: "Avengers : Endgame",
 
     Year: "2019",
 
@@ -567,7 +567,7 @@ Write a function called countMovies which returns the number of movies contained
 console.log("/n exercise 13 /n")
 
 function countMovies(mov){
-    counted = mov.length-1
+    counted = mov.length
     return counted
 }
 console.log(countMovies(movies))
@@ -641,6 +641,20 @@ Write a function called sumAllTheYears which returns the sum of all the years in
 
 */
 console.log("/n exercise 17 /n")
+function sumAllTheYears(mov){
+    let i = 0
+    let y = 0
+    let z = ""
+    while(i<mov.length)
+    {
+    let x = mov[i].Year
+    x = parseInt(x)
+    y = y+x
+    i++
+    }
+return y}
+console.log(sumAllTheYears(movies))
+
 
 
 /* EXERCISE 18
@@ -649,6 +663,32 @@ Write a function called searchByTitle which receives a string as a parameter and
 
 */
 console.log("/n exercise 18 /n")
+function getMovieById(mov, strng){
+    let y = strng
+    y = y.toUpperCase()
+    let i = 0
+    let j = 0
+    let k = 0
+    let z = []
+    while(i<mov.length)
+    {
+    let x = mov[i].Title
+    x = x.toUpperCase()
+    x = x.split(" ")
+    j = 0
+    while(j<x.length){
+    if(x[j] === y){
+    z[k] = mov[i]
+    x = x.join(" ")
+    k++
+    }j++
+}i++
+} if(z[0]=== undefined){console.log("movie was not found, please check spelling and try again.")
+}else {return z}
+}
+console.log(getMovieById(movies,"avengers"))
+
+
 /* EXERCISE 19
 
 Write a function called searchAndDivide which receives a string as a parameter and returns an object;
