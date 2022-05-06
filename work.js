@@ -708,24 +708,26 @@ function searchAndDivide(mov, strng){
     let l = 0
     let v = []
     let z = []
-    while(i<mov.length)
-    {
+    while(i<mov.length){
+
     let x = mov[i].Title
     x = x.toUpperCase()
     x = x.split(" ")
     j = 0
     while(j<x.length){
-    if(x[j] === y){
-    z[k] = mov[i]
-    k++
-    break
-    }    
-    j++
-}if(z[k]!== mov[i])
-{v[l] = mov[i]
-}
-i++
-x = x.join(" ")
+
+        if(x[j] === y){
+        z[k] = mov[i]
+        }j++
+                
+    }if(z[k]!==mov[i]){
+        v[l]=mov[i]
+        l++
+    }else{
+        k++
+    }
+    i++
+   
 } return {includeSearched: z, DoesNotIncludeSearched: v,}
 }
 console.log(searchAndDivide(movies,"avengers"))
